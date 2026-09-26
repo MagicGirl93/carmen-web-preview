@@ -21,12 +21,10 @@ form.addEventListener("submit",function(e){
   }).catch(function(){
     /* Sin red o bloqueo: degradar al envío clásico (POST del propio form) */
     err.hidden=false;
-    if(!err.querySelector(".retry-btn")){
-      var retry=document.createElement("button");
-      retry.type="button";retry.className="btn btn-dark retry-btn";retry.textContent="Reintentar envío clásico";
-      retry.addEventListener("click",function(){form.submit()});
-      err.appendChild(retry);
-    }
+    var retry=document.createElement("button");
+    retry.type="button";retry.className="btn btn-dark";retry.textContent="Reintentar envío clásico";
+    retry.addEventListener("click",function(){form.submit()});
+    err.appendChild(retry);
   }).finally(function(){btn.disabled=false;btn.textContent="Enviar"});
 });
 })();
