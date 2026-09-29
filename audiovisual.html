@@ -12,7 +12,7 @@
   <link rel="icon" href="favicon.svg" type="image/svg+xml">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Allura&family=Josefin+Sans:wght@200;300;400;500&family=Oswald:wght@500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Allura&family=Archivo+Black&family=Josefin+Sans:wght@200;300;400;500&family=Oswald:wght@500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
   <script>document.documentElement.classList.add('js')</script>
 </head>
@@ -22,7 +22,7 @@
   <div class="wrap header-inner">
     <a class="brand" href="index.html" aria-label="Carmen Tur — inicio">A R T I S T A</a>
     <button class="nav-toggle" aria-expanded="false" aria-controls="nav-principal" aria-label="Abrir menú">
-      <span></span><span></span><span></span>
+      <span class="mplus" aria-hidden="true">+</span>
     </button>
     <nav id="nav-principal" class="site-nav" aria-label="Principal">
       <ul>
@@ -37,11 +37,16 @@
 </header>
 <main id="contenido">
 <section aria-label="Trabajos audiovisuales">
-  <div class="wrap">
-    <p class="script-hero h-page left">Carmen Tur</p>
-    <div class="av-intro">
-      <p>Recopilación de trabajos audiovisuales. Podéis consultar los detalles en la descripción de los vídeos.</p>
+<div class="av-hero">
+    <p class="script-hero av-m-title">Carmen Tur</p>
+    <div class="av-hero-grid">
+    <div class="av-hero-box">
+      <p class="script-hero av-d-title">Carmen Tur</p>
+      <p>Recopilación de trabajos audiovisuales.</p>
+      <p>Podéis consultar los detalles en la descripción de los vídeos.</p>
       <p>No están todos los que son, pero si son todos los que están. <em>¡Disfruten!</em></p>
+    </div>
+    <div class="av-hero-photo"><img src="img/img_31-sm.jpg" alt="Panorámica en blanco y negro" loading="eager" width="1600" height="470"></div>
     </div>
   </div>
   <div class="wrap narrow">
@@ -65,22 +70,6 @@
   <div class="video-grid flip">
     <div class="video-text">
       <p class="video-num">02</p>
-      <h3 class="video-title">«El universo nos habla»</h3>
-      <p class="video-desc">Ana no puede creer lo que ve: María famosa por evitar cualquier cosa más pesada que su portátil, se ha transformado en una deportista que entrena con la intensidad de una superheroína. ¿Qué ha pasado con la chica que solía huir despavorida al ver una mancuerna? María, ahora está decidida a transformar su corazón roto en músculos de acero.</p>
-    </div>
-    <div class="video-media">
-      <button class="video-poster" data-vid="universo-nos-habla" aria-label="Reproducir «El universo nos habla»">
-        <img src="img/posters/universo-nos-habla.jpg" alt="Miniatura del vídeo «El universo nos habla»" loading="lazy" width="1280" height="720">
-        <span class="play-icon" aria-hidden="true"><span>&#9654;</span></span>
-      </button>
-    </div>
-  </div>
-</div>
-<hr class="sep">
-<div class="video-block">
-  <div class="video-grid">
-    <div class="video-text">
-      <p class="video-num">03</p>
       <h3 class="video-title">«La madre»</h3>
       <p class="video-desc">Federico Hacia Lorca de Irma Correa y Nando López dirigida por Miguel del Arco en los Teatros del Canal de Madrid. [DISCLAIMER] Hubo un error de cámara durante la grabación y lamentablemente los primeros segundos del monólogo de «la madre» solo se escucha el audio, pero pasados esos segundos está el audio y vídeo perfectamente.</p>
     </div>
@@ -94,9 +83,9 @@
 </div>
 <hr class="sep">
 <div class="video-block">
-  <div class="video-grid flip">
+  <div class="video-grid">
     <div class="video-text">
-      <p class="video-num">04</p>
+      <p class="video-num">03</p>
       <h3 class="video-title">«De libros e ikea»</h3>
       <p class="video-desc">Miguel decide ser espontáneo por primera vez en su vida ¿Cómo lo encajará Victoria?</p>
     </div>
@@ -110,9 +99,9 @@
 </div>
 <hr class="sep">
 <div class="video-block">
-  <div class="video-grid">
+  <div class="video-grid flip">
     <div class="video-text">
-      <p class="video-num">05</p>
+      <p class="video-num">04</p>
       <h3 class="video-title">«Un Gucci con leche»</h3>
       <p class="video-desc">Cuando tu jefa te pone muy histérica. Cuando tu jefa te pone al borde de un ataque de nervios. Cuando tu jefa despierta tu espíritu revolucionario. Cuando tu jefa... Tu jefa. Te pone.</p>
     </div>
@@ -126,9 +115,9 @@
 </div>
 <hr class="sep">
 <div class="video-block">
-  <div class="video-grid flip">
+  <div class="video-grid">
     <div class="video-text">
-      <p class="video-num">06</p>
+      <p class="video-num">05</p>
       <h3 class="video-title">«Nina»</h3>
       <p class="video-desc">Monólogo del 4º acto en «La Gaviota» de Antón Chéjov. Personaje Nina Mijailovna Sarechnaia, «Nina». Con este monólogo puse un pie en el mundo del arte dramático. Le tengo un cariño especial. Está ligerísimamente modificado (espero que Chéjov me perdone). Siento que muchas, si no todas, podemos llevar a una Nina dentro. Gracias por vuestro cariño.</p>
     </div>
@@ -142,9 +131,9 @@
 </div>
 <hr class="sep">
 <div class="video-block">
-  <div class="video-grid">
+  <div class="video-grid flip">
     <div class="video-text">
-      <p class="video-num">07</p>
+      <p class="video-num">06</p>
       <h3 class="video-title">«Estefi's»</h3>
       <p class="video-desc">Sacar adelante una peluquería. Ser la reina de las redes. Organizar una inauguración. ¿Logrará Estefi llegar a tiempo rodeada de ****?</p>
     </div>
@@ -158,9 +147,9 @@
 </div>
 <hr class="sep">
 <div class="video-block">
-  <div class="video-grid flip">
+  <div class="video-grid">
     <div class="video-text">
-      <p class="video-num">08</p>
+      <p class="video-num">07</p>
       <h3 class="video-title">«Mama»</h3>
       <p class="video-desc">Cuando pierdes a tu madre te enfrentas a una pérdida terrible, especialmente para unos hermanos cuyas vidas no han sido «un camino de rosas». Para estos hermanos afrontar esa pérdida implica abrir heridas que creían curadas.</p>
     </div>
@@ -174,15 +163,31 @@
 </div>
 <hr class="sep">
 <div class="video-block">
-  <div class="video-grid">
+  <div class="video-grid flip">
     <div class="video-text">
-      <p class="video-num">09</p>
+      <p class="video-num">08</p>
       <h3 class="video-title">«El Supermercado»</h3>
       <p class="video-desc">¿Qué se puede hacer cuando nuestro «yo presente» se convierte en un «yo pasado» que actúa como verdugo futuro?</p>
     </div>
     <div class="video-media">
       <button class="video-poster" data-vid="el-supermercado" aria-label="Reproducir «El Supermercado»">
         <img src="img/posters/el-supermercado.jpg" alt="Miniatura del vídeo «El Supermercado»" loading="lazy" width="1280" height="720">
+        <span class="play-icon" aria-hidden="true"><span>&#9654;</span></span>
+      </button>
+    </div>
+  </div>
+</div>
+<hr class="sep">
+<div class="video-block">
+  <div class="video-grid">
+    <div class="video-text">
+      <p class="video-num">09</p>
+      <h3 class="video-title">«El universo nos habla»</h3>
+      <p class="video-desc">Ana no puede creer lo que ve: María famosa por evitar cualquier cosa más pesada que su portátil, se ha transformado en una deportista que entrena con la intensidad de una superheroína. ¿Qué ha pasado con la chica que solía huir despavorida al ver una mancuerna? María, ahora está decidida a transformar su corazón roto en músculos de acero.</p>
+    </div>
+    <div class="video-media">
+      <button class="video-poster" data-vid="universo-nos-habla" aria-label="Reproducir «El universo nos habla»">
+        <img src="img/posters/universo-nos-habla.jpg" alt="Miniatura del vídeo «El universo nos habla»" loading="lazy" width="1280" height="720">
         <span class="play-icon" aria-hidden="true"><span>&#9654;</span></span>
       </button>
     </div>
@@ -195,7 +200,7 @@
 <footer class="site-footer">
   <div class="wrap foot-grid">
     <div>
-      <p class="foot-brand"><a href="index.html">C A R M E N<br>T U R</a></p>
+      <p class="foot-brand"><a href="index.html"><span class="fb1">C A R M E N</span><span class="fb2">T U R</span></a></p>
       <div class="foot-legal" style="margin-top:1.2rem">
         <a href="privacidad.html">Política de privacidad</a>
         <span>© 2023 Creado por Carmen Tur.</span>

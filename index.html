@@ -12,7 +12,7 @@
   <link rel="icon" href="favicon.svg" type="image/svg+xml">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Allura&family=Josefin+Sans:wght@200;300;400;500&family=Oswald:wght@500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Allura&family=Archivo+Black&family=Josefin+Sans:wght@200;300;400;500&family=Oswald:wght@500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
   <script>document.documentElement.classList.add('js')</script>
 </head>
@@ -22,7 +22,7 @@
   <div class="wrap header-inner">
     <a class="brand" href="index.html" aria-label="Carmen Tur — inicio">A R T I S T A</a>
     <button class="nav-toggle" aria-expanded="false" aria-controls="nav-principal" aria-label="Abrir menú">
-      <span></span><span></span><span></span>
+      <span class="mplus" aria-hidden="true">+</span>
     </button>
     <nav id="nav-principal" class="site-nav" aria-label="Principal">
       <ul>
@@ -44,7 +44,7 @@
 <section aria-label="Videobook">
   <div class="wrap">
     <div class="title-mail">
-      <h2 class="thin-title sec-title"><a href="audiovisual.html">VIDEOBOOK<br>2026</a></h2>
+      <h2 class="thin-title sec-title sec-title-vb"><a href="audiovisual.html">VIDEOBOOK<br>2026</a></h2>
       <p class="mail-line"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="1"/><path d="M3 7.5l9 5.5 9-5.5"/></svg><a href="mailto:carmen.tur@icloud.com">carmen.tur@icloud.com</a></p>
     </div>
     <div class="video-media" style="margin-top:1.2rem">
@@ -57,11 +57,11 @@
 </section>
 <section aria-label="Book fotográfico">
   <div class="wrap">
-    <h2 class="thin-title sec-title"><a href="book.html">Book</a></h2>
+    <h2 class="thin-title sec-title"><a href="book.html">BOOK</a></h2>
   </div>
   <div class="gallery-bleed">
     <div class="wrap">
-      <div class="gallery">
+      <div class="gallery home-strip" id="strip-home">
 <div class="g-item">
   <a href="img/img_30.jpg" class="g-link" data-lightbox data-full="img/img_30.jpg" data-alt="Carmen Tur con coleta, top negro, fondo gris">
     <img src="img/img_30-sm.jpg" alt="Carmen Tur con coleta, top negro, fondo gris" loading="lazy" width="1000" height="1500">
@@ -92,7 +92,58 @@
     <img src="img/img_13-sm.jpg" alt="Carmen Tur con vestido negro de lentejuelas" loading="lazy" width="1066" height="1600">
   </a>
 </div>
+<div class="g-item">
+  <a href="img/img_01.jpg" class="g-link" data-lightbox data-full="img/img_01.jpg" data-alt="Carmen Tur sentada, camiseta beige y vaqueros">
+    <img src="img/img_01-sm.jpg" alt="Carmen Tur sentada, camiseta beige y vaqueros" loading="lazy" width="1105" height="1600">
+  </a>
+</div>
+<div class="g-item">
+  <a href="img/img_07.jpg" class="g-link" data-lightbox data-full="img/img_07.jpg" data-alt="Carmen Tur sonriendo, vestido de lunares">
+    <img src="img/img_07-sm.jpg" alt="Carmen Tur sonriendo, vestido de lunares" loading="lazy" width="1066" height="1600">
+  </a>
+</div>
+<div class="g-item">
+  <a href="img/img_03.jpg" class="g-link" data-lightbox data-full="img/img_03.jpg" data-alt="Primer plano de Carmen Tur, fondo gris">
+    <img src="img/img_03-sm.jpg" alt="Primer plano de Carmen Tur, fondo gris" loading="lazy" width="1500" height="1000">
+  </a>
+</div>
+<div class="g-item">
+  <a href="img/img_16.jpg" class="g-link" data-lightbox data-full="img/img_16.jpg" data-alt="Carmen Tur con camisa blanca abierta, fondo blanco">
+    <img src="img/img_16-sm.jpg" alt="Carmen Tur con camisa blanca abierta, fondo blanco" loading="lazy" width="1118" height="1500">
+  </a>
+</div>
+<div class="g-item">
+  <a href="img/img_33.jpg" class="g-link" data-lightbox data-full="img/img_33.jpg" data-alt="Carmen Tur, camisa blanca y vaqueros, fondo negro">
+    <img src="img/img_33-sm.jpg" alt="Carmen Tur, camisa blanca y vaqueros, fondo negro" loading="lazy" width="1066" height="1600">
+  </a>
+</div>
+<div class="g-item">
+  <a href="img/img_27.jpg" class="g-link" data-lightbox data-full="img/img_27.jpg" data-alt="Retrato de Carmen Tur, top negro, fondo gris">
+    <img src="img/img_27-sm.jpg" alt="Retrato de Carmen Tur, top negro, fondo gris" loading="lazy" width="1000" height="1500">
+  </a>
+</div>
+<div class="g-item">
+  <a href="img/img_22.jpg" class="g-link" data-lightbox data-full="img/img_22.jpg" data-alt="Carmen Tur, top blanco y vaqueros, fondo gris">
+    <img src="img/img_22-sm.jpg" alt="Carmen Tur, top blanco y vaqueros, fondo gris" loading="lazy" width="1000" height="1500">
+  </a>
+</div>
+<div class="g-item">
+  <a href="img/img_15.jpg" class="g-link" data-lightbox data-full="img/img_15.jpg" data-alt="Carmen Tur con top negro, fondo oscuro">
+    <img src="img/img_15-sm.jpg" alt="Carmen Tur con top negro, fondo oscuro" loading="lazy" width="1066" height="1600">
+  </a>
+</div>
+<div class="g-item">
+  <a href="img/img_14.jpg" class="g-link" data-lightbox data-full="img/img_14.jpg" data-alt="Retrato de Carmen Tur sonriendo, fondo gris">
+    <img src="img/img_14-sm.jpg" alt="Retrato de Carmen Tur sonriendo, fondo gris" loading="lazy" width="1500" height="1000">
+  </a>
+</div>
+<div class="g-item">
+  <a href="img/img_05.jpg" class="g-link" data-lightbox data-full="img/img_05.jpg" data-alt="Carmen Tur con vestido negro, fondo negro">
+    <img src="img/img_05-sm.jpg" alt="Carmen Tur con vestido negro, fondo negro" loading="lazy" width="1192" height="1600">
+  </a>
+</div>
       </div>
+      <div class="loadmore-wrap"><button type="button" class="btn-line loadmore" data-loadmore="#strip-home">Load More</button></div>
     </div>
   </div>
   <div class="video-modal" role="dialog" aria-modal="true" aria-label="Vídeo no disponible aún" hidden><div class="box"></div></div>
@@ -101,7 +152,7 @@
 <footer class="site-footer">
   <div class="wrap foot-grid">
     <div>
-      <p class="foot-brand"><a href="index.html">C A R M E N<br>T U R</a></p>
+      <p class="foot-brand"><a href="index.html"><span class="fb1">C A R M E N</span><span class="fb2">T U R</span></a></p>
       <div class="foot-legal" style="margin-top:1.2rem">
         <a href="privacidad.html">Política de privacidad</a>
         <span>© 2023 Creado por Carmen Tur.</span>

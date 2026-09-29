@@ -23,6 +23,15 @@ if(toggle){
   });
 }
 
+/* load more progresivo (home y book, solo m\u00f3vil) */
+$$("[data-loadmore]").forEach(function(btn){
+  btn.addEventListener("click",function(){
+    var t=document.querySelector(btn.getAttribute("data-loadmore"));
+    if(t)t.classList.add("expanded");
+    var w=btn.closest(".loadmore-wrap");if(w)w.hidden=true;
+  });
+});
+
 /* reveals */
 if("IntersectionObserver" in window){
   var io=new IntersectionObserver(function(es){
@@ -87,6 +96,14 @@ $$(".tabs").forEach(function(tabs){
 /* ---------- vídeos (usa js/videos.js) ---------- */
 var V=window.VIDEOS||{};
 var modal=$(".video-modal");
+function playInline(wrap,v){
+  if(/youtube\.com\/embed\//.test(v.src)){
+    wrap.innerHTML='<div class="video-embed"><iframe src="'+v.src+'?autoplay=1&rel=0" title="'+v.titulo+'" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></div>';
+  }else{
+    wrap.innerHTML='<video class="video-player" controls preload="none" poster="'+v.poster+'"><source src="'+v.src+'" type="video/mp4"></video>';
+    var vid=wrap.querySelector("video");if(vid)vid.play();
+  }
+}
 function openVideoModal(id){
   var v=V[id];if(!v||!modal)return;
   $(".box",modal).innerHTML=
@@ -106,8 +123,7 @@ $$("[data-video]").forEach(function(card){
   if(btn)btn.addEventListener("click",function(){
     if(v.src){ /* reproduce inline */
       var wrap=$(".video-media",card);
-      wrap.innerHTML='<video class="video-player" controls preload="none" poster="'+v.poster+'"><source src="'+v.src+'" type="video/mp4"></video>';
-      var vid=$("video",wrap);if(vid)vid.play();
+      playInline(wrap,v);
     }else{openVideoModal(id)}
   });
 });
@@ -116,8 +132,7 @@ $$(".video-poster[data-vid]").forEach(function(btn){
   btn.addEventListener("click",function(){
     if(v.src){
       var wrap=btn.closest(".video-media");
-      wrap.innerHTML='<video class="video-player" controls preload="none" poster="'+v.poster+'"><source src="'+v.src+'" type="video/mp4"></video>';
-      var vid=wrap.querySelector("video");if(vid)vid.play();
+      playInline(wrap,v);
     }else{openVideoModal(id)}
   });
 });
