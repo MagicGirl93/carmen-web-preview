@@ -348,7 +348,8 @@ html.js .reveal.in{opacity:1;transform:none}
 /* pie móvil: que CARMEN/TUR quepa en 2 líneas */
 @media (max-width:639px){
   .script-hero{margin-right:6vw}
-  .script-hero.h-mega{margin-right:6vw}
+  .script-hero.h-mega{margin-right:6vw;font-size:14.5vw} /* Brisely es ancha: en movil escala con el viewport para que quepa */
+  .book-intro .b-text p.script-hero{font-size:13vw} /* idem: evita el sangrado lateral y el scroll horizontal */
   .foot-brand{font-size:1.5rem;letter-spacing:.15em}
   .foot-brand .fb2{text-align:left}
   .title-mail{display:block;text-align:right}
