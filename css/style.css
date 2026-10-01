@@ -1,11 +1,11 @@
 
 /* v4 — copia fiel del Wix: blanco/negro minimalista */
-/* Mea Culpa (script elegida por Javier 2026-10-01 como sustituta gratuita de Brisely;
-   licencia SIL OFL — uso comercial permitido; auto-hospedada en build/fonts/) */
+/* Brisely (tipografía original de la web de Carmen, archivo TTF proporcionado por ella
+   a través de Javier 2026-10-01; uso en su propia web — no redistribuir; auto-hospedada en build/fonts/) */
 @font-face{
-  font-family:"Mea Culpa";
-  src:url("../fonts/MeaCulpa.woff2") format("woff2"),
-      url("../fonts/MeaCulpa.woff") format("woff");
+  font-family:"Brisely";
+  src:url("../fonts/brisely.woff2") format("woff2"),
+      url("../fonts/brisely.woff") format("woff");
   font-weight:400;
   font-style:normal;
   font-display:swap;
@@ -15,8 +15,8 @@
   src:url("../fonts/SlimJoe.woff2") format("woff2"),url("../fonts/SlimJoe.woff") format("woff")}
 :root{
   --paper:#ffffff; --ink:#000000; --muted:#3d3d3d; --line:#e3e3e3;
-  --font-script:"Mea Culpa",cursive;
-  --font-meaculpa:"Mea Culpa",cursive; /* punto 3.3 (lightbox): nombre en script */
+  --font-script:"Brisely",cursive;
+  --font-meaculpa:"Brisely",cursive; /* punto 3.3 (lightbox): nombre en script */
   --font-thin:"Josefin Sans","Century Gothic",Arial,sans-serif;
   --font-slim:"Slim Joe","Josefin Sans",sans-serif;
   --font-bold:"Oswald",Arial,sans-serif;
@@ -52,7 +52,7 @@ body.nav-open .nav-toggle .mplus{transform:rotate(45deg)}
 /* ---------- script hero (sangra por la derecha como el original) ---------- */
 .bleed{overflow:hidden}
 .script-hero{font-family:var(--font-script);font-weight:400;text-align:right;white-space:nowrap;
-  line-height:1.15;margin-right:-6vw}
+  line-height:1.15;margin-right:-6vw;padding-right:.12em} /* padding-right: la tinta de los swash de Brisely sobrepasa el ancho de avance */
 .script-hero.h-mega{font-size:clamp(3.625rem,1.48rem + 10.7vw,11rem);margin-top:2rem;margin-right:1.5vw}
 .script-hero.h-page{font-size:clamp(3.68rem,3.68rem + 4.86vw,8rem);margin-top:1.2rem}
 
@@ -219,7 +219,7 @@ hr.sep{border:0;border-top:1px solid var(--line);margin:3.5rem 0}
 .book-intro .b-photo{max-width:22rem}
 .book-intro .b-text p{font-weight:300;font-size:1.05rem;margin-bottom:1rem;max-width:44rem}
 .book-intro .b-text p.script-hero{font-family:var(--font-script);font-weight:700; /* faux-bold para presencia como en el Wix original */
-  font-size:clamp(3.68rem,3.68rem + 4.86vw,8rem);max-width:none}
+  font-size:clamp(3.68rem,3.68rem + 4.86vw,8rem);max-width:none;padding-bottom:.32em} /* aire para el descendente de la C de Brisely */
 .b-photo{position:relative;overflow:hidden}
 .b-photo::after{content:"";position:absolute;inset:0;background:rgba(255,255,255,.55);pointer-events:none}
 .book-intro .b-text strong{font-weight:600}
