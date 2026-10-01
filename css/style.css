@@ -53,8 +53,8 @@ body.nav-open .nav-toggle .mplus{transform:rotate(45deg)}
 .bleed{overflow:hidden}
 .script-hero{font-family:var(--font-script);font-weight:400;text-align:right;white-space:nowrap;
   line-height:1.15;margin-right:-6vw;padding-right:.12em} /* padding-right: la tinta de los swash de Brisely sobrepasa el ancho de avance */
-.script-hero.h-mega{font-size:clamp(3.625rem,1.48rem + 10.7vw,11rem);margin-top:2rem;margin-right:1.5vw}
-.script-hero.h-page{font-size:clamp(3.68rem,3.68rem + 4.86vw,8rem);margin-top:1.2rem}
+.script-hero.h-mega{font-size:min(11rem,1.48rem + 10.7vw,14.2vw);margin-top:2rem;margin-right:1.5vw}
+.script-hero.h-page{font-size:min(8rem,3.68rem + 4.86vw,13vw);margin-top:1.2rem}
 
 /* ---------- titulares finos ---------- */
 .thin-title{font-family:var(--font-slim);font-weight:400;letter-spacing:.05em;line-height:1.05}
@@ -219,7 +219,7 @@ hr.sep{border:0;border-top:1px solid var(--line);margin:3.5rem 0}
 .book-intro .b-photo{max-width:22rem}
 .book-intro .b-text p{font-weight:300;font-size:1.05rem;margin-bottom:1rem;max-width:44rem}
 .book-intro .b-text p.script-hero{font-family:var(--font-script);font-weight:700; /* faux-bold para presencia como en el Wix original */
-  font-size:clamp(3.68rem,3.68rem + 4.86vw,8rem);max-width:none;padding-bottom:.32em} /* aire para el descendente de la C de Brisely */
+  font-size:min(8rem,3.68rem + 4.86vw,13vw);max-width:none;padding-bottom:.32em} /* aire para el descendente de la C de Brisely */
 .b-photo{position:relative;overflow:hidden}
 .b-photo::after{content:"";position:absolute;inset:0;background:rgba(255,255,255,.55);pointer-events:none}
 .book-intro .b-text strong{font-weight:600}
@@ -348,8 +348,7 @@ html.js .reveal.in{opacity:1;transform:none}
 /* pie móvil: que CARMEN/TUR quepa en 2 líneas */
 @media (max-width:639px){
   .script-hero{margin-right:6vw}
-  .script-hero.h-mega{margin-right:6vw;font-size:14.5vw} /* Brisely es ancha: en movil escala con el viewport para que quepa */
-  .book-intro .b-text p.script-hero{font-size:13vw} /* idem: evita el sangrado lateral y el scroll horizontal */
+  .script-hero.h-mega{margin-right:6vw} /* el tope 14.2vw del font-size ya garantiza que quepa */
   .foot-brand{font-size:1.5rem;letter-spacing:.15em}
   .foot-brand .fb2{text-align:left}
   .title-mail{display:block;text-align:right}
