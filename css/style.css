@@ -21,6 +21,12 @@
   --font-slim:"Slim Joe","Josefin Sans",sans-serif;
   --font-bold:"Oswald",Arial,sans-serif;
   --font-sys:"Archivo Black","Oswald",Arial,sans-serif;
+  /* 2.5/3.4 (2ª revisión 2026-10-01): DIN Next Light y DIN Neuzeit Grotesk son
+     comerciales (sin licencia para auto-hospedar). Se declaran primero con sus
+     nombres reales (render exacto en equipos con licencia, p. ej. el Mac de
+     Carmen) y como fallback Inter, el grotesco libre más cercano. */
+  --font-din:"DIN Next Light","din-next-w01-light","DINNextW01-Light","Inter","Helvetica Neue",Helvetica,Arial,sans-serif;
+  --font-dinneuzeit:"DIN Neuzeit Grotesk Light","dinneuzeitgroteskltw01-_812426","Inter","Helvetica Neue",Helvetica,Arial,sans-serif;
   --wrap:76rem;
 }
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
@@ -53,16 +59,16 @@ body.nav-open .nav-toggle .mplus{transform:rotate(45deg)}
 .bleed{overflow:hidden}
 .script-hero{font-family:var(--font-script);font-weight:400;text-align:right;white-space:nowrap;
   line-height:1.15;margin-right:-6vw;padding-right:.12em} /* padding-right: la tinta de los swash de Brisely sobrepasa el ancho de avance */
-.script-hero.h-mega{font-size:min(11rem,1.48rem + 10.7vw,14.2vw);margin-top:2rem;margin-right:1.5vw}
-.script-hero.h-page{font-size:min(8rem,3.68rem + 4.86vw,13vw);margin-top:1.2rem}
+.script-hero.h-mega{font-size:min(6.25rem,14.5vw);margin-top:2rem;margin-right:.5em} /* 1.1 (2ª rev): 100px como el Wix (font_2); .5em de margen dcho. para que el swash de Brisely (overshoot medido 0.18em) termine dentro, como en el Wix */
+.script-hero.h-page{font-size:min(3.75rem,13vw);margin-top:1.2rem} /* 3.2 (2ª rev): 60px como el Wix book */
 
 /* ---------- titulares finos ---------- */
 .thin-title{font-family:var(--font-slim);font-weight:400;letter-spacing:.05em;line-height:1.05}
 .thin-title a{color:var(--ink);text-decoration:none}
-.thin-title a:hover{text-decoration:underline;text-underline-offset:.25em}
-.sec-title{font-size:clamp(1.875rem,0.9rem + 4.8vw,5.2rem);margin:3.5rem 0 1rem;font-weight:700}
-.sec-title-vb{font-size:clamp(1.75rem,4.6vw,3.56rem);font-weight:700}
-.sec-title-sm{font-size:clamp(2rem,5vw,3.4rem);margin:2.5rem 0 .8rem;font-weight:700}
+.thin-title a:hover{text-decoration:none} /* 1.2+5.2 (2ª rev): ningún hipervínculo subraya en hover */
+.sec-title{font-size:clamp(1.875rem,0.9rem + 4.8vw,5.2rem);margin:3.5rem 0 1rem;font-weight:400;letter-spacing:.22em} /* 1.4: fino y tracking ancho como el footer */
+.sec-title-vb{font-size:clamp(1.75rem,4.6vw,3.56rem);font-weight:400;letter-spacing:.22em} /* 1.4 */
+.sec-title-sm{font-size:clamp(2rem,5vw,3.4rem);margin:2.5rem 0 .8rem;font-weight:400;letter-spacing:.22em} /* 3.6: Neutras/Personalidad = misma tipografía que 1.4 */
 .title-mail{display:flex;align-items:center;justify-content:space-between;gap:2rem;flex-wrap:wrap}
 .title-mail .sec-title{margin-bottom:0}
 
@@ -71,7 +77,7 @@ body.nav-open .nav-toggle .mplus{transform:rotate(45deg)}
   font-size:1.02rem;font-weight:300}
 .mail-line svg{width:1.15rem;height:1.15rem;fill:none;stroke:var(--ink);stroke-width:1.5}
 .mail-line a{text-decoration:none;color:var(--ink)}
-.mail-line a:hover{text-decoration:underline}
+.mail-line a:hover{text-decoration:none} /* 1.2+5.2 (2ª rev) */
 
 /* ---------- secciones ---------- */
 section{padding:2.5rem 0}
@@ -87,7 +93,8 @@ p.justi{text-align:justify}
 .video-block:nth-of-type(3) .video-title,.video-block:nth-of-type(7) .video-title{text-align:right}
 .video-block:nth-of-type(5) .video-title,.video-block:nth-of-type(9) .video-title{text-align:center}
 .video-grid{display:grid;gap:2.5rem;align-items:start}
-.video-desc{font-weight:300;text-align:justify;max-width:24rem;margin:0 auto;font-size:1.02rem}
+.video-desc{font-family:var(--font-din);font-weight:300;text-align:justify;max-width:26rem;margin:0 auto;
+  font-size:1.0625rem;line-height:1.6} /* 2.5 (2ª rev): DIN NEXT LIGHT 17px como el Wix (font_7) */
 .video-media{position:relative}
 .video-poster{position:relative;aspect-ratio:16/9;background:#111;border:0;width:100%;cursor:pointer;padding:0;display:block}
 .video-poster img{width:100%;height:100%;object-fit:cover}
@@ -132,6 +139,9 @@ hr.sep{border:0;border-top:1px solid var(--line);margin:3.5rem 0}
 .home-carousel::-webkit-scrollbar{display:none}
 .home-carousel .g-item{flex:0 0 auto;width:clamp(9.5rem,30vw,15rem);scroll-snap-align:start}
 .home-carousel .g-item img{aspect-ratio:9/25;object-fit:cover} /* 1.3.d: calibrado a la referencia de Carmen (h/w ~2.7); reversible en 1 línea; pendiente de su confirmación */
+/* 1.3 (2ª rev): reencuadre carrusel — misma medida de fragmento, solo cambia la posición del recorte */
+.home-carousel .g-item img[data-n="30"]{object-position:12% 50%} /* cara visible en vez de pelo */
+.home-carousel .g-item img[data-n="14"]{object-position:21% 50%}
 .car-btn{position:absolute;top:50%;transform:translateY(-50%);z-index:5;width:2.75rem;height:2.75rem;
   border:0;border-radius:50%;background:rgba(255,255,255,.85);color:#111;font-size:1.7rem;line-height:1;
   display:grid;place-items:center;padding:0 0 .15rem;cursor:pointer;opacity:.45;
@@ -143,16 +153,27 @@ hr.sep{border:0;border-top:1px solid var(--line);margin:3.5rem 0}
 @media(max-width:639px){.carousel-wrap{margin:0}}
 @media (prefers-reduced-motion:reduce){.home-carousel{scroll-snap-type:x proximity;scroll-behavior:auto}}
 
-/* ---------- hero audiovisual: banda negra full-bleed, caja gris centrada (puntos 2.1+2.3) ---------- */
-.av-hero{background:#0c0c0c;padding:clamp(5rem,12vw,10rem) 1rem}
-.av-hero-box{background:rgba(200,200,200,.65);color:#141414;padding:clamp(1.6rem,4vw,3rem);
-  width:min(52%,54rem);margin:0 auto}
+/* ---------- hero audiovisual (2ª revisión 2026-10-01) ----------
+   2.1: Brisely intacto. 2.2: más aire entre nombre y descripción.
+   2.3: foto de Carmen integrada en la franja lateral (como el Wix).
+   2.4: caja desplazada a la izquierda y del ancho justo hasta el final de "Tur"
+        (los párrafos no aportan ancho intrínseco: width:0 + min-width:100%). */
+.av-hero{background:#0c0c0c;padding:0;display:flex;align-items:stretch;overflow:hidden}
+.av-hero-box{background:rgba(200,200,200,.65);color:#141414;
+  padding:clamp(1.6rem,4vw,2.6rem) clamp(1.8rem,4vw,3rem);
+  width:fit-content;max-width:min(40rem,82%);
+  margin:clamp(2.5rem,6vw,4rem) 0 clamp(2.5rem,6vw,4rem) 6%;
+  align-self:center;position:relative;z-index:2}
 .av-hero-box .script-hero{font-family:var(--font-meaculpa,var(--font-script));
-  font-size:clamp(2.75rem,6vw,4.625rem);text-align:left;margin:0 0 1rem;white-space:nowrap}
-.av-hero-box p{font-weight:300;margin-bottom:.55rem;max-width:26rem}
+  font-size:clamp(2.75rem,6vw,4.625rem);text-align:left;margin:0 0 1.6rem;white-space:nowrap}
+.av-hero-box p{font-weight:300;margin-bottom:.55rem}
+.av-hero-box p:not(.script-hero){width:0;min-width:100%}
+.av-hero-photo{flex:1 1 auto;position:relative;min-width:0;min-height:17rem}
+.av-hero-photo img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:55% 32%}
 @media(max-width:819px){
-  .av-hero{padding:clamp(3rem,10vw,5rem) .75rem}
-  .av-hero-box{width:92%}
+  .av-hero{flex-direction:column}
+  .av-hero-photo{order:-1;flex:none;min-height:11rem}
+  .av-hero-box{margin:2rem auto;max-width:92%}
 }
 
 /* ---------- collage book (Neutras / Personalidad, sistema Wix) ---------- */
@@ -165,6 +186,8 @@ hr.sep{border:0;border-top:1px solid var(--line);margin:3.5rem 0}
 .collage-module .g-item,.collage-module .g-link{height:100%}
 .collage-module .g-link{display:block}
 .collage-module img{width:100%;height:100%;object-fit:cover;display:block}
+/* 3.5 (2ª rev): reencuadre collage — misma medida, cara visible como en el Wix */
+.collage-module .g-item img[data-n="14"]{object-position:8% 50%}
 
 /* ---------- load more progresivo (solo book, solo m\u00f3vil; la portada es carrusel) ---------- */
 .loadmore-wrap{display:none;text-align:center;margin:2.4rem 0}
@@ -184,10 +207,11 @@ hr.sep{border:0;border-top:1px solid var(--line);margin:3.5rem 0}
   max-width:min(96vw,80rem);max-height:94vh}
 .lightbox figure{margin:0;max-width:min(66vw,58rem);text-align:center}
 .lightbox img{max-height:86vh;max-width:100%;width:auto;height:auto;margin:0 auto;display:block}
-.lb-panel{color:#fff;flex:none;max-width:20rem}
-.lb-title{font-family:var(--font-meaculpa);font-weight:400;font-size:clamp(2.2rem,4vw,3.4rem);
-  line-height:1.15;margin:0 0 1.4rem}
-.lb-credits{font-family:var(--font-slim);font-weight:300;font-size:.95rem;letter-spacing:.08em;
+.lb-panel{color:#fff;flex:none;max-width:20rem;align-self:stretch;display:flex;flex-direction:column;
+  justify-content:flex-end;padding-bottom:1.2rem} /* 3.8 (2ª rev): texto abajo a la derecha, no centrado vertical */
+.lb-title{font-family:var(--font-meaculpa);font-weight:400;font-size:clamp(2rem,3.5vw,2.9rem);
+  line-height:1.15;margin:0 0 .6rem;white-space:nowrap} /* 3.8: nombre siempre en una línea; hueco pequeño con la descripción */
+.lb-credits{font-family:var(--font-slim);font-weight:300;font-size:.95rem;letter-spacing:.12em;
   text-transform:uppercase;line-height:2}
 .lb-credits p{margin:0}
 .lightbox button{position:absolute;background:none;border:0;color:#fff;font-size:2rem;cursor:pointer;
@@ -216,13 +240,14 @@ hr.sep{border:0;border-top:1px solid var(--line);margin:3.5rem 0}
 
 /* ---------- book intro ---------- */
 .book-intro{display:grid;gap:2rem;align-items:start;margin:1rem 0 3rem}
-.book-intro .b-photo{max-width:22rem}
+.book-intro .b-photo{max-width:22rem;aspect-ratio:1/1} /* 3.1 (2ª rev): foto cuadrada como el Wix */
+.book-intro .b-photo img{width:100%;height:100%;object-fit:cover;display:block}
 .book-intro .b-text p{font-weight:300;font-size:1.05rem;margin-bottom:1rem;max-width:44rem}
-.book-intro .b-text p.script-hero{font-family:var(--font-script);font-weight:700; /* faux-bold para presencia como en el Wix original */
-  font-size:min(8rem,3.68rem + 4.86vw,13vw);max-width:none;padding-bottom:.32em} /* aire para el descendente de la C de Brisely */
+.book-intro .b-text p.script-hero{font-family:var(--font-script);font-weight:400; /* 3.2 (2ª rev): peso ligero como Inicio/Audiovisual, sin faux-bold */
+  font-size:min(3.75rem,13vw);max-width:none;padding-bottom:.32em;margin-bottom:1.5rem;margin-right:0} /* 3.3 (2ª rev): más aire con el texto; margin-right:0 anula el -6vw heredado */
+.din-neuzeit{font-family:var(--font-dinneuzeit);font-weight:400} /* 3.4 (2ª rev): DIN neuzeit Grotesk para "cómo"/"diferentes" */
 .b-photo{position:relative;overflow:hidden}
 .b-photo::after{content:"";position:absolute;inset:0;background:rgba(255,255,255,.55);pointer-events:none}
-.book-intro .b-text strong{font-weight:600}
 
 /* ---------- bio-cv ---------- */
 .bcv-title{font-family:var(--font-sys);font-weight:700;font-size:clamp(4rem,14vw,9rem);
@@ -235,6 +260,7 @@ hr.sep{border:0;border-top:1px solid var(--line);margin:3.5rem 0}
   text-align:center;text-transform:uppercase;letter-spacing:.14em}
 .cv-label{font-family:var(--font-slim);font-weight:400;font-size:clamp(1.7rem,4vw,2.6rem);margin:2.6rem 0 1.2rem;
   text-transform:uppercase;letter-spacing:.14em}
+.cv-comma{font-size:1.18em;line-height:1} /* 4.1 (2ª rev): la coma se lee claramente como coma */
 .cv-rows{display:grid;gap:.45rem;margin-bottom:1rem}
 .cv-row{display:grid;grid-template-columns:7.5rem 1.6fr 1fr 1fr;gap:1rem;align-items:baseline;
   padding:.35rem 0;font-weight:300}
@@ -294,7 +320,9 @@ form.contacto{display:grid;gap:1.3rem}
 .enviar-wrap{text-align:center;margin-top:.5rem}
 .btn-text{background:none;border:0;font:inherit;font-weight:400;font-size:1.05rem;cursor:pointer;
   color:var(--ink);padding:.8rem 2rem;min-height:44px}
-.btn-text:hover{text-decoration:underline;text-underline-offset:.3em}
+.btn-text:hover{text-decoration:none} /* 5.2 (2ª rev): sin subrayado en hover */
+/* 5.2 (2ª rev): regla global — ningún hipervínculo muestra subrayado al pasar el cursor */
+a:hover{text-decoration:none}
 .mailto-alt{font-weight:300;font-size:.95rem;text-align:center}
 
 .contact-mid{display:none}
@@ -319,7 +347,7 @@ form.contacto{display:grid;gap:1.3rem}
 .foot-brand .fb1{display:block}
 .foot-brand .fb2{display:block;text-align:right}
 .foot-legal{font-weight:300;font-size:.95rem;display:grid;gap:.3rem}
-.foot-legal a{color:var(--ink)}
+.foot-legal a{color:var(--ink);text-decoration:none} /* 5.1 (2ª rev): "Política de privacidad" sin subrayado, sigue siendo enlace */
 .foot-side{display:flex;flex-direction:column;gap:1.6rem;align-items:flex-start}
 .social{display:flex;gap:1.5rem;flex-wrap:wrap}
 .social a{display:flex;align-items:center;gap:.45rem;text-decoration:none;color:var(--ink)}
