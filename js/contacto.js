@@ -16,7 +16,13 @@ form.addEventListener("submit",function(e){
   fetch("https://formsubmit.co/ajax/carmen.tur@icloud.com",{
     method:"POST",headers:{"Content-Type":"application/json","Accept":"application/json"},
     body:JSON.stringify(data)
-  }).then(function(r){return r.json()}).then(function(){
+  }).then(function(r){
+    /* Endurecer (punto 5.1): inspeccionar el estado HTTP y el cuerpo JSON antes de
+       mostrar el mensaje de éxito. FormSubmit AJAX responde {"success":true} en envíos
+       correctos; si el estado no es 2xx o el JSON indica error, caemos al .catch() y
+       se muestra #form-err con el botón de reintento clásico. */
+    return r.json().then(function(j){if(!r.ok||!(j&&j.success)){throw new Error("FormSubmit: envío rechazado");}});
+  }).then(function(){
     form.reset();ok.hidden=false;ok.scrollIntoView({behavior:"smooth",block:"center"});
   }).catch(function(){
     /* Sin red o bloqueo: degradar al envío clásico (POST del propio form) */

@@ -12,7 +12,9 @@
   <link rel="icon" href="favicon.svg" type="image/svg+xml">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Allura&family=Archivo+Black&family=Josefin+Sans:wght@200;300;400;500&family=Oswald:wght@500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Josefin+Sans:wght@200;300;400;500&family=Oswald:wght@500;600&display=swap" rel="stylesheet">
+  <link rel="preload" href="fonts/SlimJoe.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="fonts/MeaCulpa.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="css/style.css">
   <script>document.documentElement.classList.add('js')</script>
 </head>
@@ -72,9 +74,8 @@
 <div class="cv-row"><span class="yr">2014 |</span><span class="obra">Romeo y Julieta<small>William Shakespeare</small></span><span>Julieta</span><span class="dir">Paco Piñero</span></div>
 <div class="cv-row"><span class="yr">2013 |</span><span class="obra">Campanadas de boda<small>Cía. La Cubana</small></span><span>Dama de honor (elenco)</span><span class="dir">Jordi Milán</span></div>
     </div>
-    <div class="cv-tvwrap">
-      <h4 class="cv-label cv-label-side">TV,<br>CORTOS<br>&amp; WEB<br>SERIES</h4>
-      <div class="cv-rows">
+    <h4 class="cv-label">TV, CORTOS &amp; WEB SERIES</h4>
+    <div class="cv-rows">
 <div class="cv-row tv"><span class="yr">2022 |</span><span class="obra">Las noches de Tefía<small>Buendia Estudios</small></span><span>Pequeñas Partes</span><span class="dir">Miguel del Arco</span></div>
 <div class="cv-row tv"><span class="yr">2022 |</span><span class="obra">Los protegidos: El regreso TV<small>Atresmedia</small></span><span>Ahogo Secundario</span><span class="dir">José María Caro</span></div>
 <div class="cv-row tv"><span class="yr">2021 |</span><span class="obra">Eternal Féminin cortometraje<small>Andrea Ruíz & Carla Jabonero</small></span><span>Principal</span><span class="dir">Andrea Ruíz</span></div>
@@ -83,7 +84,6 @@
 <div class="cv-row tv"><span class="yr">2017 |</span><span class="obra">Operación Azul cortometraje<small>Verve Media Company España</small></span><span>Soraya Principal</span><span class="dir"></span></div>
 <div class="cv-row tv"><span class="yr">2016 |</span><span class="obra">Hugo cortometraje<small>Irtve</small></span><span>Samantha Principal</span><span class="dir">Sebastián Pérez Cuevas</span></div>
 <div class="cv-row tv"><span class="yr">2015 |</span><span class="obra">The Lesbian Theory web serie<small>Sur5D</small></span><span>Laura Secundario</span><span class="dir">Óscar Lara</span></div>
-      </div>
     </div>
     <h4 class="cv-label">Danza</h4>
     <div class="cv-rows">
@@ -150,8 +150,15 @@
 </footer>
 <div class="lightbox" role="dialog" aria-modal="true" aria-label="Visor de fotos" hidden>
   <button class="lb-close" aria-label="Cerrar visor">✕</button>
+  <button class="lb-fs" aria-label="Ver a pantalla completa"><svg class="icon-enter" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 3H5a2 2 0 0 0-2 2v3"/><path d="M16 3h3a2 2 0 0 1 2 2v3"/><path d="M8 21H5a2 2 0 0 1-2-2v-3"/><path d="M16 21h3a2 2 0 0 0 2-2v-3"/></svg><svg class="icon-exit" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 3v3a2 2 0 0 1-2 2H3"/><path d="M21 8h-3a2 2 0 0 1-2-2V3"/><path d="M3 16h3a2 2 0 0 1 2 2v3"/><path d="M16 21v-3a2 2 0 0 1 2-2h3"/></svg></button>
   <button class="lb-prev" aria-label="Foto anterior">‹</button>
-  <figure><img alt=""><figcaption></figcaption></figure>
+  <div class="lb-stage">
+    <figure><img alt=""></figure>
+    <aside class="lb-panel" aria-live="polite">
+      <p class="lb-title">Carmen Tur</p>
+      <div class="lb-credits"></div>
+    </aside>
+  </div>
   <button class="lb-next" aria-label="Foto siguiente">›</button>
 </div>
   <script src="js/videos.js" defer></script>
