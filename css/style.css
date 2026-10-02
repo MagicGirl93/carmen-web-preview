@@ -59,7 +59,9 @@ body.nav-open .nav-toggle .mplus{transform:rotate(45deg)}
 .bleed{overflow:hidden}
 .script-hero{font-family:var(--font-script);font-weight:400;text-align:right;white-space:nowrap;
   line-height:1.15;margin-right:-6vw;padding-right:.12em} /* padding-right: la tinta de los swash de Brisely sobrepasa el ancho de avance */
-.script-hero.h-mega{font-size:min(6.25rem,14.5vw);margin-top:2rem;margin-right:.5em} /* 1.1 (2ª rev): 100px como el Wix (font_2); .5em de margen dcho. para que el swash de Brisely (overshoot medido 0.18em) termine dentro, como en el Wix */
+.script-hero.h-mega{font-size:min(6.25rem,14.5vw);margin-top:2rem;margin-right:.5em;line-height:1.45} /* 1.1 (2ª rev): 100px como el Wix (font_2); .5em de margen dcho. para que el swash de Brisely (overshoot medido 0.18em) termine dentro, como en el Wix */ /* P1 (3ª rev 2026-10-02, Carmen): line-height 1.45 para que los ascendentes/descendentes de Mea Culpa (C de Carmen, T de Tur) no queden cortados */
+/* P1 (3ª rev): el contenedor del título hero necesita aire vertical por arriba y por abajo */
+.hero-title-sec{padding:1.4rem 0 2.2rem}
 .script-hero.h-page{font-size:min(3.75rem,13vw);margin-top:1.2rem} /* 3.2 (2ª rev): 60px como el Wix book */
 
 /* ---------- titulares finos ---------- */
@@ -93,6 +95,9 @@ p.justi{text-align:justify}
 .video-block:nth-of-type(3) .video-title,.video-block:nth-of-type(7) .video-title{text-align:right}
 .video-block:nth-of-type(5) .video-title,.video-block:nth-of-type(9) .video-title{text-align:center}
 .video-grid{display:grid;gap:2.5rem;align-items:start}
+/* P7 (3ª rev): equilibrado vertical de los vídeos que desbordan (V2, V5: -18px; V9: -38px) */
+.video-block[data-vfix="-18px"] .video-text{transform:translateY(-18px)}
+.video-block[data-vfix="-38px"] .video-text{transform:translateY(-38px)}
 .video-desc{font-family:var(--font-din);font-weight:300;text-align:justify;max-width:26rem;margin:0 auto;
   font-size:1.0625rem;line-height:1.6} /* 2.5 (2ª rev): DIN NEXT LIGHT 17px como el Wix (font_7) */
 .video-media{position:relative}
@@ -159,7 +164,7 @@ hr.sep{border:0;border-top:1px solid var(--line);margin:3.5rem 0}
    2.4: caja desplazada a la izquierda y del ancho justo hasta el final de "Tur"
         (los párrafos no aportan ancho intrínseco: width:0 + min-width:100%). */
 .av-hero{background:#0c0c0c;padding:0;display:flex;align-items:stretch;overflow:hidden}
-.av-hero-box{background:rgba(200,200,200,.65);color:#141414;
+.av-hero-box{background:rgba(238,238,238,.72);color:#141414; /* P6 (3ª rev 2026-10-02, Carmen): fondo más blanco como el Wix, manteniendo transparencia */
   padding:clamp(1.6rem,4vw,2.6rem) clamp(1.8rem,4vw,3rem);
   width:fit-content;max-width:min(40rem,82%);
   margin:clamp(2.5rem,6vw,4rem) 0 clamp(2.5rem,6vw,4rem) 6%;
@@ -167,6 +172,10 @@ hr.sep{border:0;border-top:1px solid var(--line);margin:3.5rem 0}
 .av-hero-box .script-hero{font-family:var(--font-meaculpa,var(--font-script));
   font-size:clamp(2.75rem,6vw,4.625rem);text-align:left;margin:0 0 1.6rem;white-space:nowrap}
 .av-hero-box p{font-weight:300;margin-bottom:.55rem}
+/* P5 (3ª rev): jerarquía de espaciado como el Wix — compacto entre 2-3, mayor entre 3-4 */
+.av-hero-box .av-sub1{margin-bottom:.32rem}
+.av-hero-box .av-sub2{margin-bottom:1.25rem}
+.av-hero-box .av-sub3{margin-bottom:0}
 .av-hero-box p:not(.script-hero){width:0;min-width:100%}
 .av-hero-photo{flex:1 1 auto;position:relative;min-width:0;min-height:17rem}
 .av-hero-photo img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:55% 32%}
@@ -210,7 +219,7 @@ hr.sep{border:0;border-top:1px solid var(--line);margin:3.5rem 0}
 .lb-panel{color:#fff;flex:none;max-width:20rem;align-self:stretch;display:flex;flex-direction:column;
   justify-content:flex-end;padding-bottom:1.2rem} /* 3.8 (2ª rev): texto abajo a la derecha, no centrado vertical */
 .lb-title{font-family:var(--font-meaculpa);font-weight:400;font-size:clamp(2rem,3.5vw,2.9rem);
-  line-height:1.15;margin:0 0 .6rem;white-space:nowrap} /* 3.8: nombre siempre en una línea; hueco pequeño con la descripción */
+  line-height:1.5;margin:0 0 1.1rem;white-space:nowrap} /* 3.8: nombre siempre en una línea */ /* P2 (3ª rev 2026-10-02, Carmen): line-height 1.5 + margen 1.1rem para que el script no pise los créditos; estructural para todas las fotos */
 .lb-credits{font-family:var(--font-slim);font-weight:300;font-size:.95rem;letter-spacing:.12em;
   text-transform:uppercase;line-height:2}
 .lb-credits p{margin:0}
