@@ -56,12 +56,12 @@ a{color:var(--ink)}
 body.nav-open .nav-toggle .mplus{transform:rotate(45deg)}
 
 /* ---------- script hero (sangra por la derecha como el original) ---------- */
-.bleed{overflow:hidden}
+.bleed{overflow:visible}  /* antes overflow:hidden: recortaba la C de Mea Culpa; el sangrado derecho ya no existe (margin-right:.5em) */
 .script-hero{font-family:var(--font-script);font-weight:400;text-align:right;white-space:nowrap;
   line-height:1.15;margin-right:-6vw;padding-right:.12em} /* padding-right: la tinta de los swash de Brisely sobrepasa el ancho de avance */
-.script-hero.h-mega{font-size:min(6.25rem,14.5vw);margin-top:2rem;margin-right:.5em;line-height:1.45} /* 1.1 (2ª rev): 100px como el Wix (font_2); .5em de margen dcho. para que el swash de Brisely (overshoot medido 0.18em) termine dentro, como en el Wix */ /* P1 (3ª rev 2026-10-02, Carmen): line-height 1.45 para que los ascendentes/descendentes de Mea Culpa (C de Carmen, T de Tur) no queden cortados */
+.script-hero.h-mega{font-size:min(6.25rem,14.5vw);margin-top:2rem;margin-right:.5em;line-height:1.7} /* 1.1 (2ª rev): 100px como el Wix (font_2); .5em de margen dcho. para que el swash de Brisely (overshoot medido 0.18em) termine dentro, como en el Wix */ /* P1bis (2026-10-02): 1.7 + .bleed sin recorte: el ascendente alto de la C de Mea Culpa ya no se corta */
 /* P1 (3ª rev): el contenedor del título hero necesita aire vertical por arriba y por abajo */
-.hero-title-sec{padding:1.4rem 0 2.2rem}
+.hero-title-sec{padding:2.6rem 0 2.8rem} /* P1bis (2026-10-02): contenedor amplio para que Mea Culpa respire */
 .script-hero.h-page{font-size:min(3.75rem,13vw);margin-top:1.2rem} /* 3.2 (2ª rev): 60px como el Wix book */
 
 /* ---------- titulares finos ---------- */
